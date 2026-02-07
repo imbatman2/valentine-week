@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Valentine's Week ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle">
+        <span class="music-icon">🎵</span>
+    </button>
+    <audio id="bgMusic" loop>
+        <source src="C:\Users\shrey\Downloads\files\Elvis Presley - Can't Help Falling in Love (Lyrics).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- PAGE 1: Ask Out Page -->
+    <div class="page active" id="askOutPage">
+        <div class="ask-content">
+            <!-- Cute Dog Animation -->
+            <div class="dog-mascot" id="dogMascot">
+                <div class="dog">
+                    <div class="dog-face">
+                        <div class="dog-ears">
+                            <div class="ear left"></div>
+                            <div class="ear right"></div>
+                        </div>
+                        <div class="dog-head">
+                            <div class="dog-eyes">
+                                <div class="eye left"></div>
+                                <div class="eye right"></div>
+                            </div>
+                            <div class="dog-nose"></div>
+                            <div class="dog-mouth"></div>
+                        </div>
+                    </div>
+                    <div class="dog-body"></div>
+                    <div class="dog-tail"></div>
+                </div>
+            </div>
+
+            <div class="romantic-message">
+                <h1 class="main-title">Hey CupCake ❤️</h1>
+                <p class="love-paragraph">
+                    Even after our moment on the morning of 5th Feb… or maybe the night of 4th Feb… I still consider the night of 23rd Nov ’25 the best night of my life. Not because of anything dramatic, not because we suddenly became something else… but because you trusted me with something so honest.......something I don’t even know if I deserved to hear.
+
+You make me happy, Yashvi. In a way that feels calm and safe, yet somehow exciting at the same time.
+
+You’re this incredible person I never get tired of being around. I could listen to you talk forever… and I genuinely believe your voice sounds better than an angel’s (if they even exist).
+
+
+                    <br><br>
+                    And I like you. I like you more than I usually admit, more than I probably show. 
+                    So here's my question...
+                    <br><br>
+                    <span class="highlight">Would you like to spend this entire Valentine's Week with me?</span>
+                    <br><br>
+                    I promise to make every single day special, filled with surprises, laughter, 
+                    and memories we'll cherish forever. What do you say?
+                </p>
+            </div>
+
+            <div class="button-container">
+                <button class="btn btn-yes" id="yesBtn">Yes ❤️</button>
+                <button class="btn btn-no" id="noBtn">No you creep, we are strangers</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: Schedule Page -->
+    <div class="page" id="schedulePage">
+        <div class="schedule-header">
+            <h1 class="schedule-title">Our Valentine Week Schedule ❤️</h1>
+            <p class="schedule-subtitle">A week of romance, surprises, and unforgettable moments</p>
+        </div>
+
+        <div class="timeline">
+            <!-- Day 1 -->
+            <div class="day-card" data-day="1">
+                <div class="day-number">Day 1</div>
+                <div class="day-date">February 7th - Rose Day 🌹</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        I'll let you rest because of the party last night
+                        <br>
+                        <span class="surprise-text">Please don't be mad.....I didn't go to city to bring flowers</span><br>
+                    </p>
+                </div>
+                <div class="day-theme rest-theme"></div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card" data-day="2">
+                <div class="day-number">Day 2</div>
+                <div class="day-date">February 8th</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        <strong>1 AM:</strong> A nice campus walk with me<br>
+                        You can't say no to where I take you<br>
+                        Whatever happens is a surprise<br>
+                        <span class="surprise-text">(don't keep your hopes high 😉)</span>
+                        <br><br>
+                        <strong>Afternoon:</strong><br>
+                        Since it's a Sunday, I wanna go to the city with you<br>
+                        📸 Photobooth date! 
+                    </p>
+                </div>
+                <div class="day-theme city-theme"></div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-card" data-day="3">
+                <div class="day-number">Day 3</div>
+                <div class="day-date">February 9th - Chocolate Day 🍫</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        <br>
+                        I know you don't like chocolates (except dark chocolate)<br>
+                        <br>
+                        <strong>1 AM walk</strong> (short one) with a surprise<br>
+                        <br>
+                        <strong>Around 10pm:-</strong><strong>Movie night 🎬</strong>
+                    </p>
+                    <div class="input-section">
+                        <label for="movieInput">What movie should we watch? 💕(I don't wanna pick Star Wars or summ)</label>
+                        <input type="text" id="movieInput" placeholder="Suggest a movie...">
+                        <button class="submit-btn" id="movieSubmit">Submit ✨</button>
+                    </div>
+                </div>
+                <div class="day-theme zootopia-theme"></div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-card" data-day="4">
+                <div class="day-number">Day 4</div>
+                <div class="day-date">February 10th - Teddy Day 🧸</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        Surprise 1 AM walk<br>
+                        <span class="surprise-text">(short one because of lab)</span>
+                    </p>
+                </div>
+                <div class="day-theme moon-theme"></div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-card" data-day="5">
+                <div class="day-number">Day 5</div>
+                <div class="day-date">February 11th - Promise Day 🤝</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        A break from me<br>
+                        Pakk gayi hogi nahi? 😅<br>
+                        <br>
+                        And it's promise day<br>
+                        <span class="highlight">We could just talk ❤️</span>
+                    </p>
+                </div>
+                <div class="day-theme promise-theme"></div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="day-card" data-day="6">
+                <div class="day-number">Day 6</div>
+                <div class="day-date">February 12th - Hug Day 🤗</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        <strong>Dinner with me at:</strong>
+                    </p>
+                    <div class="checkbox-section">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="dinner" value="Urban Tadka" id="urbanTadka">
+                            <span>Urban Tadka 🍛</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="dinner" value="Lauriat" id="lauriat">
+                            <span>Lauriat 🍜</span>
+                        </label>
+                    </div>
+                    <button class="submit-btn" id="dinnerSubmit">Confirm Choice ✨</button>
+                    <!-- Cute dog near dinner table -->
+                    <div class="dinner-dog">🐕‍🦺🍽️</div>
+                </div>
+                <div class="day-theme dinner-theme"></div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="day-card" data-day="7">
+                <div class="day-number">Day 7</div>
+                <div class="day-date">February 13th - Kiss Day 💋</div>
+                <div class="day-content">
+                    <p class="day-text">
+                        <strong>1 AM walk</strong><br>
+                        We kiss in different locations 😘<br>
+                        <br>
+                        <strong>Current non-negotiable locations:</strong><br>
+                        <span class="location-list">📍 Where we had our first kiss
+                            📍 Core 4
+                            📍 Reseach Building
+                            📍 Library
+                            📍 IITG Logo
+                            📍 Serpentine Lake(again)
+    
+                        </span>
+                    </p>
+                    <div class="input-section">
+                        <label for="locationInput">Suggest additional locations? (I still remember you said something about core 1  )💕</label>
+                        <input type="text" id="locationInput" placeholder="Where should we kiss?">
+                        <button class="submit-btn" id="locationSubmit">Submit ✨</button>
+                    </div>
+                    <p class="day-text" style="margin-top: 20px;">
+                        <strong>Classes till 4 PM</strong> (skip steel)<br>
+                        <br>
+                        Watch sunset with light beer 🌅🍺<br>
+                        <span class="surprise-text">Estimated sunset time: 6:15 PM</span>
+                    </p>
+                </div>
+                <div class="day-theme sunset-theme"></div>
+            </div>
+
+            <!-- Day 8 -->
+            <div class="day-card" data-day="8">
+                <div class="day-number">Day 8</div>
+                <div class="day-date">February 14th - Valentine's Day 💖</div>
+                <div class="day-content">
+                    <p class="day-text valentine-special">
+                        <strong class="valentine-title">The Grand Finale ✨</strong><br>
+                        <br>
+                        Cancel all your plans from 5 PM onwards<br>
+                        <span class="surprise-text">(maybe 6 PM)</span><br>
+                        <br>
+                        <span class="highlight">This day is all about us ❤️</span>
+                    </p>
+                </div>
+                <div class="day-theme valentine-theme"></div>
+            </div>
+        </div>
+
+        <div class="footer-message">
+            <p>Can't wait to make these memories with you ❤️</p>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p id="modalText"></p>
+            <button class="modal-btn" id="modalBtn">Okay ❤️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,764 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-primary: #FFB6C1;
+    --pink-secondary: #FFC0CB;
+    --pink-light: #FFE4E9;
+    --pink-dark: #FF69B4;
+    --pink-gradient: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FFE4E9 100%);
+    --white: #FFFFFF;
+    --text-dark: #4A4A4A;
+    --text-light: #8B8B8B;
+    --shadow: rgba(255, 105, 180, 0.3);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">❤️</text></svg>'), auto;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float-up 10s infinite;
+    opacity: 0;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Music Toggle */
+.music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--pink-gradient);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.music-icon {
+    font-size: 24px;
+}
+
+/* Page Container */
+.page {
+    min-height: 100vh;
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* PAGE 1: Ask Out Page */
+#askOutPage {
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 25%, #FFD4E0 50%, #FFE4E9 75%, #FFF0F5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: gradient-shift 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.ask-content {
+    text-align: center;
+    max-width: 800px;
+    position: relative;
+}
+
+/* Cute Dog Mascot */
+.dog-mascot {
+    position: absolute;
+    top: -80px;
+    right: -100px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.dog {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.dog-face {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.dog-ears {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+}
+
+.ear {
+    width: 20px;
+    height: 30px;
+    background: #D4A574;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+}
+
+.ear.left {
+    left: 5px;
+    transform: rotate(-20deg);
+}
+
+.ear.right {
+    right: 5px;
+    transform: rotate(20deg);
+}
+
+.dog-head {
+    width: 50px;
+    height: 50px;
+    background: #E6B88A;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.dog-eyes {
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 12px;
+}
+
+.eye {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%, 98%, 100% { height: 8px; }
+    99% { height: 2px; }
+}
+
+.dog-nose {
+    width: 12px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dog-mouth {
+    width: 20px;
+    height: 10px;
+    border: 2px solid #000;
+    border-top: none;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dog-body {
+    width: 40px;
+    height: 30px;
+    background: #E6B88A;
+    border-radius: 50%;
+    margin: -5px auto 0;
+}
+
+.dog-tail {
+    width: 5px;
+    height: 25px;
+    background: #D4A574;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: -5px;
+    transform-origin: top;
+    animation: wag 0.5s infinite;
+}
+
+@keyframes wag {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(30deg); }
+}
+
+.dog-mascot.happy .dog-tail {
+    animation: wag-fast 0.2s infinite;
+}
+
+@keyframes wag-fast {
+    0%, 100% { transform: rotate(-20deg); }
+    50% { transform: rotate(40deg); }
+}
+
+/* Romantic Message */
+.romantic-message {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: var(--pink-dark);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px var(--shadow);
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(1.05); }
+    20%, 40% { transform: scale(1); }
+}
+
+.love-paragraph {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: var(--text-dark);
+    font-weight: 300;
+}
+
+.highlight {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--pink-dark);
+    font-weight: 700;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #FF69B4, #FF1493);
+    color: white;
+}
+
+.btn-yes:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.btn-no {
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.btn-no:hover {
+    transform: translateY(-5px);
+}
+
+/* PAGE 2: Schedule Page */
+#schedulePage {
+    background: linear-gradient(180deg, #FFF0F5 0%, #FFE4E9 100%);
+    padding: 60px 20px;
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.schedule-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.schedule-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+/* Timeline */
+.timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.day-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: slideIn 0.8s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.day-card:nth-child(even) {
+    animation: slideInRight 0.8s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.day-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(255, 105, 180, 0.25);
+}
+
+.day-number {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 10px;
+}
+
+.day-date {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+}
+
+.day-content {
+    position: relative;
+    z-index: 2;
+}
+
+.day-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.surprise-text {
+    font-style: italic;
+    color: var(--pink-dark);
+}
+
+.valentine-special {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.valentine-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: var(--pink-dark);
+}
+
+/* Day Themes */
+.day-theme {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.rest-theme {
+    background: linear-gradient(135deg, #C9A0DC, #B48FCC);
+}
+
+.city-theme {
+    background: linear-gradient(135deg, #FF6B9D, #C06C84);
+}
+
+.zootopia-theme {
+    background: linear-gradient(135deg, #FF8C42, #FFA351);
+}
+
+.moon-theme {
+    background: linear-gradient(135deg, #4A5568, #2D3748);
+}
+
+.promise-theme {
+    background: linear-gradient(135deg, #FFDEE9, #FCC5E4);
+}
+
+.dinner-theme {
+    background: linear-gradient(135deg, #FFB88C, #DE6262);
+}
+
+.sunset-theme {
+    background: linear-gradient(135deg, #FF6E7F, #BFE9FF);
+}
+
+.valentine-theme {
+    background: linear-gradient(135deg, #FF0844, #FFB199);
+    opacity: 0.15;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+/* Input Sections */
+.input-section {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+}
+
+.input-section label {
+    display: block;
+    font-weight: 600;
+    color: var(--pink-dark);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid var(--pink-primary);
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.input-section input:focus {
+    border-color: var(--pink-dark);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+.submit-btn {
+    margin-top: 15px;
+    padding: 12px 35px;
+    background: linear-gradient(135deg, #FF69B4, #FF1493);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+/* Checkbox Section */
+.checkbox-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.checkbox-label:hover {
+    background: rgba(255, 182, 193, 0.3);
+    transform: translateX(10px);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: var(--pink-dark);
+}
+
+.checkbox-label span {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.dinner-dog {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 20px;
+    animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.location-list {
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+/* Footer */
+.footer-message {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+}
+
+.footer-message p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--pink-dark);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--pink-gradient);
+    padding: 50px 60px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.modal-btn {
+    padding: 15px 40px;
+    background: white;
+    color: var(--pink-dark);
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .love-paragraph {
+        font-size: 1rem;
+    }
+
+    .schedule-title {
+        font-size: 2.5rem;
+    }
+
+    .day-card {
+        padding: 25px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    .dog-mascot {
+        position: static;
+        margin: 0 auto 20px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-content {
+        margin: 20px;
+        padding: 30px 40px;
+    }
+
+    .modal-content p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .schedule-title {
+        font-size: 2rem;
+    }
+
+    .day-date {
+        font-size: 1.3rem;
+    }
+
+    .day-text {
+        font-size: 1rem;
+    }
+}
